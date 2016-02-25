@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0D5DC330-D185-4B49-9BFB-E38492B4B48D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimpleLibSharp</RootNamespace>
+    <AssemblyName>SimpleLibSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CppSharp">
+      <HintPath>..\..\deps\CppSharp.win.x86\CppSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CppSharp.AST">
+      <HintPath>..\..\deps\CppSharp.win.x86\CppSharp.AST.dll</HintPath>
+    </Reference>
+    <Reference Include="CppSharp.Generator">
+      <HintPath>..\..\deps\CppSharp.win.x86\CppSharp.Generator.dll</HintPath>
+    </Reference>
+    <Reference Include="CppSharp.Parser.CLI">
+      <HintPath>..\..\deps\CppSharp.win.x86\CppSharp.Parser.CLI.dll</HintPath>
+    </Reference>
+    <Reference Include="CppSharp.Parser.CSharp">
+      <HintPath>..\..\deps\CppSharp.win.x86\CppSharp.Parser.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CppSharp.Runtime">
+      <HintPath>..\..\deps\CppSharp.win.x86\CppSharp.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\src\CtpNet\CharArrayTypeRenamePass .cs">
+      <Link>CharArrayTypeRenamePass .cs</Link>
+    </Compile>
+    <Compile Include="Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\deps\CppSharp.win.x86\CppSharp.CppParser.dll">
+      <Link>CppSharp.CppParser.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
